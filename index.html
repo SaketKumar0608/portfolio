@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Personal Portfolio — Saket Kumar</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills and contact information.">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed; /* purple */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1100px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071124 0%, #071026 50%, #041027 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:24px;
+      font-size:16px;
+    }
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+    }
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;     
+      margin-bottom:20px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:700;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+    nav a:hover{color:var(--accent)}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+
+    .hero{
+      display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;margin-bottom:20px;
+    }
+    .intro h1{font-size:32px;margin:0 0 8px 0}
+    .intro p{color:var(--muted);margin:0 0 16px 0;line-height:1.5}
+    .cta{display:flex;gap:10px}
+    .btn{
+      padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;background:var(--accent);color:white;box-shadow:0 6px 18px rgba(124,58,237,0.18);
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .profile-card{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+    .avatar{
+      width:140px;height:140px;border-radius:20px;background:linear-gradient(135deg,#0ea5e9,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:white;box-shadow:0 12px 30px rgba(0,0,0,0.6);
+    }
+    .small{font-size:13px;color:var(--muted)}
+
+    main{display:grid;grid-template-columns:1fr 330px;gap:20px}
+    section{margin-bottom:18px}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
+    .project h3{margin:0 0 8px 0}
+    .project p{color:var(--muted);margin:0 0 12px 0}
+    .project .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    .skills{display:flex;flex-direction:column;gap:8px}
+    .skill{display:flex;justify-content:space-between;align-items:center}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:999px;flex:1;margin-left:12px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#06b6d4)}
+
+    .contact-form{display:flex;flex-direction:column;gap:8px}
+    .contact-form input,.contact-form textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    .contact-form textarea{min-height:100px;resize:vertical}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      main{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      nav a{margin-left:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-size:14px">Your Name</div>
+          <div class="small">Frontend Developer • Student • Designer</div>
+        </div>
+      </div>
+      <nav class="small">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero card">
+      <div class="intro">
+        <h1>Hi — I’m <span style="color:var(--accent)">Saket Kumar</span></h1>
+        <p>I build fast, accessible, and delightful web experiences. I focus on front-end development, UI design and developer tooling. Below are a few projects I’ve shipped recently.</p>
+        <div class="cta">
+          <button class="btn" onclick="scrollToSection('projects')">View Projects</button>
+          <a href="#contact" class="btn secondary" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px">Get in touch</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="avatar">YN</div>
+        <div style="font-weight:700">Saket Kumar</div>
+        <div class="small">Based in India • Open to work</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <a class="small" href="#" style="text-decoration:none;color:var(--muted)">GitHub</a>
+          <a class="small" href="#" style="text-decoration:none;color:var(--muted)">LinkedIn</a>
+        </div>
+      </aside>
+    </div>
+
+    <main>
+      <div>
+        <section id="projects" class="card">
+          <h2 style="margin-top:0">Selected projects</h2>
+          <div class="projects">
+            <article class="project">
+              <h3>Project A — Web App</h3>
+              <p class="small">A brief one-line summary of the project and its impact. Add links to live demo and code.</p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Node</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <h3>Project B — Mobile UI</h3>
+              <p class="small">Design system and components library used across the product.
+              </p>
+              <div class="tags">
+                <span class="tag">Figma</span>
+                <span class="tag">Accessibility</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <h3>Project C — Tooling</h3>
+              <p class="small">CLI tool that speeds up builds and automates repetitive tasks.</p>
+              <div class="tags">
+                <span class="tag">CLI</span>
+                <span class="tag">Productivity</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <h3>Project D — Experiment</h3>
+              <p class="small">Research prototype exploring ML-powered UI interactions.</p>
+              <div class="tags">
+                <span class="tag">Prototype</span>
+                <span class="tag">ML</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="about" class="card" style="margin-top:16px">
+          <h2 style="margin-top:0">About me</h2>
+          <p class="small">I’m a developer focused on building performant and accessible web apps. I enjoy turning complex problems into clean and simple interfaces. When I’m not coding I draw, play chess, and read product design books.</p>
+        </section>
+
+        <section id="contact" class="card" style="margin-top:16px">
+          <h2 style="margin-top:0">Contact</h2>
+          <form class="contact-form" onsubmit="handleContact(event)">
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="email" placeholder="Your email" required>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn" type="submit">Send message</button>
+              <div id="status" class="small" style="color:var(--muted)"></div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card" id="skills">
+          <h3 style="margin-top:0">Skills</h3>
+          <div class="skills">
+            <div class="skill"><div>HTML &amp; CSS</div><div class="bar" aria-hidden><i style="width:92%"></i></div></div>
+            <div class="skill"><div>JavaScript</div><div class="bar" aria-hidden><i style="width:84%"></i></div></div>
+            <div class="skill"><div>React</div><div class="bar" aria-hidden><i style="width:78%"></i></div></div>
+            <div class="skill"><div>Design</div><div class="bar" aria-hidden><i style="width:68%"></i></div></div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h3 style="margin-top:0">Resume</h3>
+          <p class="small">Download a PDF version of my resume or connect on LinkedIn.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" href="#">Download</a>
+            <a class="btn secondary" href="#">LinkedIn</a>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h3 style="margin-top:0">Contact</h3>
+          <p class="small">Email: <a href="mailto:you@example.com" style="color:var(--muted)">you@example.com</a></p>
+          <p class="small">Location: India</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      Built with ♥ — Replace this with your own credits. 
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('status');
+      if(!name||!email||!message){ status.textContent='Please fill all fields.'; return; }
+
+      // In this static template we cannot actually send mail.
+      // Replace with your own backend endpoint or use a service like Formspree / Netlify Forms.
+      status.textContent = 'Thanks — message captured (local demo).';
+      setTimeout(()=> status.textContent='',3000);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
